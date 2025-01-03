@@ -1,12 +1,18 @@
 import { useState } from "react";
 import React from "react";
 
-function TaskForm() {
+function TaskForm(props) {
   const [tasks, setTasks] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(tasks + "Hola");
+    
+    const newTask = {
+      name: tasks,
+    };
+    //console.log(props)
+    props.createTask(newTask)
+    
   };
 
   return (
@@ -14,7 +20,7 @@ function TaskForm() {
       onSubmit={handleSubmit}
       method="post"
       onChange={(e) => {
-        console.log(e.target.value);
+        //console.log(e.target.value);
         setTasks(e.target.value);
       }}
     >
