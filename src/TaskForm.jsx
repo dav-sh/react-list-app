@@ -6,12 +6,7 @@ function TaskForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    const newTask = {
-      name: tasks,
-    };
-    //console.log(props)
-    props.createTask(newTask)
+    props.createTask(tasks)
     
   };
 

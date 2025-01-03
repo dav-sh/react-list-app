@@ -8,8 +8,12 @@ function App() {
     setTasks(data);
   }, []);
 
-  const createTask = (task) => {
-    setTasks([...tasks, task]);
+  const createTask = (taskName) => {
+    setTasks([...tasks, {
+      id: tasks.length +1,
+      name : taskName,
+      desc: 'descripcion nueva'
+    }]);
     console.log("actualizado");
   };
 
