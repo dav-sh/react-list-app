@@ -13,7 +13,7 @@ function TaskList() {
   return (
     <>
       {tasks.map((t) => (
-        <div key= {t.id}>
+        <div key={t.id}>
           <h1>tarea</h1>
           <button>{t.name}</button>
           <p>{t.desc}</p>
