@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import React from "react";
+import {TaskContext} from '../context/TaskContext'
 
-function TaskForm(props) {
+
+function TaskForm() {
   const [taskName, setTaskName] = useState("");
   const [taskDescription, setTaskDescription] = useState("");
+  const {createTask} = useContext(TaskContext)  //Import function from TaskContext
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.createTask({
+    createTask({
       name: taskName,
       desc: taskDescription,
     });
