@@ -11,6 +11,8 @@ function TaskForm(props) {
       name: taskName,
       desc: taskDescription,
     });
+    setTaskName('')
+    setTaskDescription('')
   };
 
   return (
@@ -21,12 +23,15 @@ function TaskForm(props) {
         onChange={(e) => {
           setTaskName(e.target.value);
         }}
+        value={taskName}
+        autoFocus
       />
       <textarea
         placeholder="Ingresa la descripcion"
         onChange={(e) => {
           setTaskDescription(e.target.value);
         }}
+        value={taskDescription}
       />
       <button>Agregar</button>
     </form>
