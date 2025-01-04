@@ -19,7 +19,9 @@ function TaskForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} method="post">
+    <div className="max-w-md mx-auto">
+      <form onSubmit={handleSubmit} method="post" className="bg-slate-800 p-10 mb-4">
+        <h1 className="text-2xl font-bold text-white mb-3">Crea tu tarea</h1>
       <input
         type="text"
         placeholder="Ingresa el nombre de la tarea"
@@ -27,6 +29,7 @@ function TaskForm() {
           setTaskName(e.target.value);
         }}
         value={taskName}
+        className="bg-slate-300 p-3 w-full mb-2"
         autoFocus
       />
       <textarea
@@ -35,9 +38,11 @@ function TaskForm() {
           setTaskDescription(e.target.value);
         }}
         value={taskDescription}
+        className="bg-slate-300 p-3 w-full mb-2"
       />
-      <button>Agregar</button>
+      <button className="bg-indigo-500  px-3 py-1 text-white">Agregar</button>
     </form>
+    </div>
   );
 }
 
