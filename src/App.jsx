@@ -28,6 +28,7 @@ function App() {
 
   return (
     <>
+    {console.log("Hola")}
       <TaskForm createTask={createTask} />
       <TaskList tasks={tasks} deleteTask={deleteTask} />
     </>
