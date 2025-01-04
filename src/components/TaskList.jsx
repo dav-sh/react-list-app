@@ -1,9 +1,8 @@
 import TaskCard from "./TaskCard";
 
 function TaskList(props) {
-  
 
-  if (props.tasks === 0) {
+  if (props.tasks.length === 0) {
     return <h1>No hay tareas</h1>;
   }
   //console.log(props.tasks)
@@ -11,7 +10,7 @@ function TaskList(props) {
     <>
       {props.tasks.map((t) => (
         <div key={t.id}>
-          <TaskCard task={t}/>
+          <TaskCard task={t}  deleteTask = {props.deleteTask}/>
         </div>
       ))}
     </>
